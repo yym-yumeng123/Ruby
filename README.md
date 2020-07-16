@@ -19,3 +19,24 @@ Rack 和 Rails 的区别
 - Rack 只是对请求和响应进行了简单封装
 - Rails 包含了你需要的一切功能, 所以很难短时间学会
 - Rails 使用 Rack 来处理 HTTP
+
+---
+
+
+```
+# 不下载文档
+gem: "--no-document"
+```
+
+gem 是什么
+- 类似于 Node 的 npm
+- gem install 用于全局安装依赖
+- 局部安装依赖可以用 bundle install
+
+1.
+```cassandraql
+rails new morney-rails-1 --database=postgresql --skip-action-mailbox --skip-action-text --skip-sprockets --skip-javascript --skip-turboli
+nks --skip-system-test --skip-test --api --skip-webpack-install
+```
+
+所有的一切从路由开始
