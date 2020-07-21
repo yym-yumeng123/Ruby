@@ -40,3 +40,26 @@ nks --skip-system-test --skip-test --api --skip-webpack-install
 ```
 
 所有的一切从路由开始
+
+---
+
+window docker 命令
+
+设置镜像, 加速下载  [docker加速器](http://guide.daocloud.io/dcs/daocloud-9153151.html)
+```cassandraql
+docker run -v morney-rails-1-data:/var/lib/postgresql/data -p 5001:5432 -e POSTGRES_USER=yym -e POSTGRES_PASSWORD=123456 -d postgres:12.2
+
+```
+- window 用户只能写文件名, 其他mac等写绝对路径
+- `/var/lib/postgresql/data` 默认数据库绝对路径 映射到目录里面
+- `-p` 端口
+- `-e` 环境变量  用户名 密码
+- `-d`  运行保持 守护进程
+- `postgres:12.2` 数据库版本
+
+docker 常用命令
+- `docker ps -a`  查看运行容器
+- `docker kill xxxx`  关闭 id 为 xxxx 的容器
+- `docker restart xxxx` 重启刚才关闭的容器
+- `docker rm xxxx` 删除容器
+- `docker container prune` 删除无用容器 , 以节省控件
