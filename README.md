@@ -63,3 +63,7 @@ docker 常用命令
 - `docker restart xxxx` 重启刚才关闭的容器
 - `docker rm xxxx` 删除容器
 - `docker container prune` 删除无用容器 , 以节省控件
+
+```cassandraql
+bin/rails db:create   创建数据库
+```
