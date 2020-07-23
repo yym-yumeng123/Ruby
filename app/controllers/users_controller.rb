@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   def create
+    p params[:email]
+    p '1212'
     user = User.new
     user.email = params[:email]
     user.password = params[:password]
