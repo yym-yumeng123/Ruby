@@ -12,6 +12,7 @@ zh-CN:
               taken: 邮箱已经被注册了
               blank: 邮箱不能为空
               invalid: 邮箱必须含有 @ 字符
+              not_found: 该邮箱未注册
   activerecord:
     errors:
       models:

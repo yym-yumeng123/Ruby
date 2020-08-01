@@ -56,3 +56,25 @@ class SessionsController < ApplicationController
   end
 end
 ```
+
+---
+
+## 登录自定义校验
+1. validate
+```ruby
+class Session
+  include ActiveModel::Model
+  attr_accessor :email, :password
+
+  # validate 方法名 就简单判断
+  validate :check_email, if: :email
+
+  # 方法 在某种条件下 对 errors 进行 add
+  def check_email
+    user = User.find_by email: email
+    if user.nil?
+      errors.add :email, :not_found
+    end
+  end
+end
+```
