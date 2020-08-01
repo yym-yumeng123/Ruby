@@ -68,6 +68,7 @@ class Session
 
   # validate 方法名 就简单判断
   validate :check_email, if: :email
+  validate :email_password_match, if: Proc.new { |s| s.email.present? and s.password.present? }
 
   # 方法 在某种条件下 对 errors 进行 add
   def check_email
