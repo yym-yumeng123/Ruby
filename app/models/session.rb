@@ -19,7 +19,7 @@ class Session
 
   def email_password_match
     user ||= User.find_by_email email
-    if user and not user.authenticate(password)
+    if user and !user.authenticate(password)
       errors.add :password, :mismatch
     end
   end

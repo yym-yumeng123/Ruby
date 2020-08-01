@@ -79,3 +79,8 @@ class Session
   end
 end
 ```
+
+
+### Bug
+1. `BCrypt::Errors::InvalidHash (invalid hash):`
+   这意味着存储在 password_digest中的哈希不是有效的BCrypt哈希
