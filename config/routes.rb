@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   # get (params1: path, params2: object)
   get '/hello', to: 'first#hello'
   get '/hi', to: 'first#hi'
+  get '/me', to: 'users#me'
 
   # get '/users', to: 'users#index'
   # get '/users/:id', to: 'users#show'
