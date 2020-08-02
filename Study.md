@@ -80,6 +80,15 @@ class Session
 end
 ```
 
+`attr_accessor :email` 做了什么
+- 声明一个对象的属性 @email
+- def email ==> 获取 @email 的值
+- def email = 赋值给 @email
+- self.user 就可以使用 @user
+
+
+
+
 
 ### Bug
 1. `BCrypt::Errors::InvalidHash (invalid hash):`
