@@ -8,10 +8,6 @@ class UsersController < ApplicationController
   end
 
   def me
-    user_id = session[:current_user_id]
-    user = User.find user_id
-    p '--------------------'
-    p user
-    render_resource user
+    render_resource current_user
   end
 end
