@@ -10,10 +10,11 @@ Rails.application.routes.draw do
   # post 'users', to: 'users#create'
   # delete 'users/:id', to: 'users#destroy'
   # patch 'users/:id', to 'users#update'
+  delete '/sessions', to: 'sessions#destroy'
 
   # 这句话代替上面的所有语句
   resources :users
 
   # 登录 只有生成和破坏
-  resources :sessions, only: [:create, :destroy]
+  resources :sessions, only: [:create]
 end
