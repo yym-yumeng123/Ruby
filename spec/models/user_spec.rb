@@ -36,8 +36,7 @@ RSpec.describe User, type: :model do
 
   it '邮箱为空字符串则只提示邮箱为空' do
     user = User.create email: ''
-    p user.errors.details[:email]
-    expect(user.errors.details[:email].length).to eq 2
+    expect(user.errors.details[:email].length).to eq 1
     expect(user.errors.details[:email][0][:error]).to eq :blank
   end
 end
