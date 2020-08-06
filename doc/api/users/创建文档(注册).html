@@ -152,8 +152,7 @@ table th, table td {
           <h3>Request</h3>
 
             <h4>Headers</h4>
-            <pre class="request headers">Host: example.org
-Content-Type: application/x-www-form-urlencoded
+            <pre class="request headers">Content-Type: application/json
 Cookie: </pre>
 
           <h4>Route</h4>
@@ -161,23 +160,12 @@ Cookie: </pre>
 
 
             <h4>Body</h4>
-            <pre class="request body">email=1%40qq.com&password=123456&password_confirmation=123456</pre>
+            <pre class="request body">{"email":"1@qq.com","password":"123456","password_confirmation":"123456"}</pre>
 
 
             <h3>Response</h3>
               <h4>Headers</h4>
-              <pre class="response headers">X-Frame-Options: SAMEORIGIN
-X-XSS-Protection: 1; mode=block
-X-Content-Type-Options: nosniff
-X-Download-Options: noopen
-X-Permitted-Cross-Domain-Policies: none
-Referrer-Policy: strict-origin-when-cross-origin
-Content-Type: application/json; charset=utf-8
-ETag: W/&quot;2fd14d724a2cf5d3129598d81ba578ff&quot;
-Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: a7329abc-55f3-4f97-ae12-219d2ba4fb0c
-X-Runtime: 0.250511
-Content-Length: 203</pre>
+              <pre class="response headers">Content-Type: application/json; charset=utf-8</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>

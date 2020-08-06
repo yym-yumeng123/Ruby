@@ -10,3 +10,11 @@
 `rails generate rspec:model user`
 
 ` bin/rails g rspec:controller user`
+
+
+---
+
+```ruby
+# api 文档
+gem 'rspec_api_documentation'
+```
