@@ -19,7 +19,7 @@ RSpec.describe "Users", type: :request do
     # 创建用户
     user = User.create! email: '11@qq.com', password: '123456', password_confirmation: '123456'
     # 登录
-    post '/sessions', params: {email: '11@qq.com', password: '123456'}
+    sign_in user.email, '123456'
     get '/me'
     expect(response).to have_http_status :ok
     body = JSON.parse(response.body)
