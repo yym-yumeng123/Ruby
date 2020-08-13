@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   # 这句话代替上面的所有语句
   resources :users
 
+  resources :records
+
   # 登录 只有生成和破坏
   resources :sessions, only: [:create]
 end
