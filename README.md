@@ -67,3 +67,55 @@ docker 常用命令
 ```cassandraql
 bin/rails db:create   创建数据库
 ```
+
+---
+
+### 开启数据库
+第一次开启数据库
+```bash
+docker run -v morney-rails-1-data:/var/lib/postgresql/data -p 5001:5432 -e POSTGRES_USER=yym -e POSTGRES_PASSWORD=123456 -d postgres:12.2
+```
+如果你曾经开启过
+```bash
+docker ps -a
+找到上次的容器
+docker restart 容器id
+```
+
+其中
+- morney-rails-1-data 是数据库目录名，可以替换为任意目录名，也可以替换为绝对路径
+- 5001 是数据库服务端口名，可以随意替换，但要确保 database.yml 也作对应修改
+- POSTGRES_USER=fang 是用户名，可以随意替换，但要确保 database.yml 也作对应修改
+- POSTGRES_PASSWORD=123456 是密码，可以随意替换，但要确保 database.yml 也作对应修改
+
+### 配置 database.yml 
+
+路径: `config/datavase.yml`
+
+1. `Mac / Linux / Docker for Windows` 用户，请将 database.yml 中的 hosts 替换为 localhost
+2. `Docker Toolbox for Windows` 用户，请将 database.yml 中的 hosts 替换为 docker-machine ip 的结果
+
+### 创建数据库
+```bash
+bin/rails db:migrate
+```
+
+### 运行 server
+```bash
+bin/rails s # server
+```
+
+### 使用 rspec-rails 测试并称生成文档
+
+- [rspec-rails](https://github.com/rspec/rspec-rails)
+- [rspec_api_documentation](https://github.com/zipmark/rspec_api_documentation)
+```bash
+bin/rake docs:generate
+start doc/api/index.html 或者 open doc/api/index.html
+```
+
+### 运行一个测试
+
+```bash
+bin/rspec -e 'should create a record'
+```
