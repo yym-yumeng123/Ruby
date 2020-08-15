@@ -79,5 +79,13 @@ end
 7. 汉化
 - `config/locales/zh-CN.yml`
 
+8. `API` 文档  `spec/acceptance/record_spec.rb`
+9. 执行
+```bash
+bin/rake docs:generete
+```
+
+10. 查看 `doc/api/名字.html`
+
 
 ![:limit](./app/assets/images/limit.png)
