@@ -92,6 +92,10 @@ bin/rake docs:generete
 enum category: { outgoings: 1, income: 2 }
 ```
 
+12. 创建必须 登录
+   - 在需要登录的地方 `must_sign_in`, `records_controller.rb`
+   - 在父类定义 `must_sign_in` 方法, 捕获 `CustomError`, `lib/custom_error.rb`
+   - 调用 对应的方法
 
 
 ![:limit](./app/assets/images/limit.png)
