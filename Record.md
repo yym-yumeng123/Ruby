@@ -87,5 +87,11 @@ bin/rake docs:generete
 
 10. 查看 `doc/api/名字.html`
 
+11. 让 `category` 变成枚举
+```ruby
+enum category: { outgoings: 1, income: 2 }
+```
+
+
 
 ![:limit](./app/assets/images/limit.png)
