@@ -41,4 +41,45 @@ RSpec.describe "Record", type: :request do
       expect(response.status).to eq 200
     end
   end
+
+  # 获取所有 index
+  context 'index' do
+    it 'should not get a record before sign_in' do
+      get '/records'
+      expect(response.status).to eq 401
+    end
+
+    it 'should get records' do
+      (1..20).to_a.map do
+        Record.create! amount: 10000, category: 'income'
+      end
+      sign_in
+      get '/records'
+      expect(response.status).to eq 200
+      body = JSON.parse response.body
+      expect(body['resources'].length).to eq 10
+    end
+  end
+  
+  # 获取一个 show
+  context 'show' do
+    it 'should not get a record before sign_in' do
+      record = Record.create! amount: 10000, category: 'income'
+      get "/records/#{record.id}"
+      expect(response.status).to eq 401
+    end
+
+    it 'should get a record' do
+      sign_in
+      record = Record.create! amount: 10000, category: 'income'
+      get "/records/#{record.id}"
+      expect(response.status).to eq 200
+    end
+
+    it 'should get a record because not found' do
+      sign_in
+      get "/records/9999999"
+      expect(response.status).to eq 404
+    end
+  end
 end

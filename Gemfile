@@ -16,6 +16,7 @@ gem 'puma', '~> 3.11'
 # Use Active Model has_secure_password
 gem 'bcrypt', '~> 3.1.12'
 gem 'dotenv-rails'
+gem 'kaminari'  # 分页
 
 # 为了文档的 body 不出现 [binary data]
 gem 'rspec_api_documentation'

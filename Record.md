@@ -99,3 +99,33 @@ enum category: { outgoings: 1, income: 2 }
 
 
 ![:limit](./app/assets/images/limit.png)
+
+
+---
+
+### 获取记录
+优化1: 公有和私有方法 `before_action` `private`
+```ruby
+class RecordsController < ApplicationController
+  # 所有的 public 方法都是 action
+  before_action :must_sign_in
+
+  # 所有的
+  def index
+    recored = Record.all
+  end
+
+  # 下面的都是私有方法
+  private
+  def  create_params
+    params.permit(:amount, :category, :notes)
+  end
+end
+```
+
+优化2: 不获取所有, 使用分页
+```ruby
+gem 'kaminari'  # 分页插件
+```
+
+知识点3: index 获取所有, show 展示一个

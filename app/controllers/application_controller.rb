@@ -5,6 +5,7 @@ class ApplicationController < ActionController::API
   # with 使用 render_xxx 方法
   # 2. 全局的地方 render
   rescue_from CustomError::MustSignInError, with: :render_must_sign_in
+  rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
 
   # 必须登录方法, 通用错误
   def must_sign_in
@@ -33,5 +34,9 @@ class ApplicationController < ActionController::API
     # head 401
     # render status: 401
     render status: :unauthorized
+  end
+
+  def render_not_found
+    render status: :not_found
   end
 end
