@@ -6,8 +6,21 @@ class RecordsController < ApplicationController
     render_resource Record.create create_params
   end
 
+  # 所有的
+  def index
+    render_resources Record.page(params[:page])
+  end
+
   def show
     render_resource Record.find(params[:id])
+  end
+
+  def update
+    record = Record.find(params[:id])
+    record.update create_params
+
+    # 更新之后有可能成功,有可能失败, 需要 render
+    render_resource record
   end
 
   def destroy
@@ -15,10 +28,7 @@ class RecordsController < ApplicationController
     head record.destroy ? :ok : :bad_request
   end
 
-  # 所有的
-  def index
-    render_resources Record.page(params[:page])
-  end
+
 
   # 下面的都是私有方法
   private
