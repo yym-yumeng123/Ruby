@@ -33,10 +33,6 @@ class RecordsController < ApplicationController
   # 下面的都是私有方法
   private
 
-  def render_resources(resources)
-    render json: {resources: resources}
-  end
-
   def  create_params
     params.permit(:amount, :category, :notes)
   end

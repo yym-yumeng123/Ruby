@@ -30,6 +30,10 @@ class ApplicationController < ActionController::API
     end
   end
 
+  def render_resources(resources)
+    render json: {resources: resources}
+  end
+
   def render_must_sign_in
     # head 401
     # render status: 401
