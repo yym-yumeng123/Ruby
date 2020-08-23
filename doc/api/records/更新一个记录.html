@@ -109,8 +109,8 @@ table th, table td {
       <h1>Records API</h1>
 
       <div class="article">
-        <h2>创建记录</h2>
-        <h3>POST /records</h3>
+        <h2>更新一个记录</h2>
+        <h3>PATCH /records/:id</h3>
 
           <h3>Parameters</h3>
           <table class="parameters table table-striped table-bordered table-condensed">
@@ -153,31 +153,31 @@ table th, table td {
 
             <h4>Headers</h4>
             <pre class="request headers">Content-Type: application/json
-Cookie: _morney_rails1_session=yZ3OlZOtkhYPQFma%2Bi38aJDTdNQZDchN1lorEqm4KIkRBKbrk9xnyJ%2F0bSqYE6MkmWneW989LMK7dMrN%2BrK0DlEJBzIbgf7%2B1FVSvgQPJt%2FJiXvXx5vyA2mBxTZwNrP%2B0o3audqIUVvksgqy7oeXEzOm9jRro%2BzPiGvvFFeANwWq8sbyO8JPmoznth5wvPtOeWblCPz%2BYZPsf842FySQQkBp9alTDBPzZZ8%3D--Eu9SCJ2yCp29hCsS--bz66dXSA29YnEefeq%2FNCfA%3D%3D</pre>
+Cookie: _morney_rails1_session=aDiCQMkW4%2FCYBbehw%2Bp9T46rJ%2FIyPrmxNImmq3cB%2FbRzL547yBZQPgnk2rjOBuJTwRPfWS%2BOljSXHYWXJvrrS3LmSpp%2B7y4knYU99ICAgE8aRWzbx39qJJVZg1XgFWRKLJ8K5IZRGbz%2Be%2F2Bd49NDZ4dTuSpZ9nWfwKbr1x9ISelqvI5jV31bHQKrr1%2BKjUNBDtcRb9x2pE6pWgItIhdIcIFfeJ8N9SpTIA%3D--D0Vg6F%2FiBqs0Pfnc--CLxLu%2FP%2FJD0Mmj%2Fs9eTv7w%3D%3D</pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">POST /records</pre>
+          <pre class="request route highlight">PATCH /records/160</pre>
 
 
             <h4>Body</h4>
-            <pre class="request body">{"amount":10000,"category":"outgoings","notes":"生活开支"}</pre>
+            <pre class="request body">{"amount":9900,"category":"outgoings","notes":"生活开支"}</pre>
 
 
             <h3>Response</h3>
               <h4>Headers</h4>
               <pre class="response headers">Content-Type: application/json; charset=utf-8
-Set-Cookie: _morney_rails1_session=sGuOhZ1spu7Jjvl19dzo5i3HtBe3n4OZaruyClsefahaloRFPTdD4aOxEr5IA54RXH1YyO3KKMc%2FeCPTHS%2Bwn5WLqG5snpem0GvgH8uE97U0DmNNFrZ59tOnWdnx%2F9bxCYXS7p3HGsLNSWBEt8HuXpcs%2BLxmjp5BuxCz%2F0rD0d1rFGH5E3mONTzI0x3nUPeGAjh6GqFbZxyBV30Dleun17XplC3M%2B5sxfT0%3D--CCkI%2BarZraOQuPgx--6vCXCyGlIAUFlNe2PfXHOQ%3D%3D; path=/; HttpOnly</pre>
+Set-Cookie: _morney_rails1_session=%2Bz7%2Bs4F8N7Pu7DMPkw52BDQlfIZvGfYI7exRC08jj3VngpIq6kdV%2Fhuzyn6DqBsJ20Oj2z0TLsgCJXrVTkdDaqjd7veoCskepNpcv8tFIG9fiVzJbCIjBeiSks3ooDsC2L8zvPP0Im9VP9ee9ByRSfGEAAykm44wOEJywSVz9OhDj60z8Covpd5tpOqlIgCklNXy%2BFwsKTq%2BgJQInGHOfB2u8DBav%2BGVcgY%3D--AYg9%2FDSdJqUC1N6N--h9H2OoniiDVWwjQkqVYkOw%3D%3D; path=/; HttpOnly</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">{
   &quot;resource&quot;: {
-    &quot;id&quot;: 157,
-    &quot;amount&quot;: 10000,
+    &quot;id&quot;: 160,
+    &quot;amount&quot;: 9900,
     &quot;category&quot;: &quot;outgoings&quot;,
     &quot;notes&quot;: &quot;生活开支&quot;,
-    &quot;created_at&quot;: &quot;2020-08-23T14:25:59.398Z&quot;,
-    &quot;updated_at&quot;: &quot;2020-08-23T14:25:59.398Z&quot;
+    &quot;created_at&quot;: &quot;2020-08-23T14:25:59.541Z&quot;,
+    &quot;updated_at&quot;: &quot;2020-08-23T14:25:59.555Z&quot;
   }
 }</pre>
       </div>
