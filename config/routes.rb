@@ -19,4 +19,7 @@ Rails.application.routes.draw do
 
   # 登录 只有生成和破坏
   resources :sessions, only: [:create]
+
+  # 标签
+  resources :tags
 end
