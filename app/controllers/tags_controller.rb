@@ -21,6 +21,15 @@ class TagsController < ApplicationController
     render_resource Tag.find(params[:id])
   end
 
+  def update
+    # 查找
+    tag = Tag.find(params[:id])
+    # 更新
+    tag.update create_params
+    # 更新之后有可能成功,有可能失败, 需要 render
+    render_resource tag
+  end
+
 
   private
 
