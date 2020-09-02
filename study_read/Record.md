@@ -98,7 +98,7 @@ enum category: { outgoings: 1, income: 2 }
    - 调用 对应的方法
 
 
-![:limit](./app/assets/images/limit.png)
+![:limit](../app/assets/images/limit.png)
 
 
 ---
