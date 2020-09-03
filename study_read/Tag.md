@@ -7,3 +7,4 @@
 
 6. 写测试 `新建 /tags`, 去 `tags_controller.rb 和 routes.rb` 创建对应路由
 
+7. 写文档
