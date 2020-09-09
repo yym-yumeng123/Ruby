@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Records API</title>
+    <title>Taggings API</title>
     <meta charset="utf-8">
     <style>
       
@@ -106,32 +106,55 @@ table th, table td {
   </head>
   <body>
     <div class="container">
-      <h1>Records API</h1>
+      <h1>Taggings API</h1>
 
       <div class="article">
-        <h2>删除记录</h2>
-        <h3>DELETE /records/:id</h3>
+        <h2>获取所有标记</h2>
+        <h3>GET /taggings</h3>
 
+          <h3>Parameters</h3>
+          <table class="parameters table table-striped table-bordered table-condensed">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                    <span class="name">page</span>
+                </td>
+                <td>
+                  <span class="description">页码</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
 
 
           <h3>Request</h3>
 
             <h4>Headers</h4>
             <pre class="request headers">Content-Type: application/json
-Cookie: _morney_rails1_session=8f5Xg%2BiGcOvyCBMkWCKYh%2FCm4NmJrTd3nj%2Fm2hXxMtFhvcz7l0UBZ%2FgwJb03XDHe6k2r0S5TNmU5G4uUXO1RY1340tt5EF6pWlxJ4EdiPpUrBohWWUeeggcYpXJPYdF%2FlolTZhwMAzcwl7E74s9kXigaUXbjUSqgMNVTzYLas4863t6vbsoTSSrBCCkDLRg0o5UllakXUMunkzAKQqsrX79mcnhpfqnNx8E%3D--Ji7Xb6kUnyDaZWTI--IwMCckOfjSpclxmAC1wdaw%3D%3D</pre>
+Cookie: _morney_rails1_session=jgADIzsA2nji5QrYkzUSMTfpJFXqPmiKu1BzNWN0gJANY5fjk58cBdlH6hXLdxABGdRM6OoIX01Ni07nzBJVhKw80aX6n1N4aukG01POtx7Pw%2Bf9GNXDGmCrJ4nAtPriogWDuoRi1rfSNMSdqUjepOJIMwGbOl%2FjTd9gi0Pl8rWfy7bAwZsmi%2FYdBnnVIUZQVDUOttHwMrjVrD1pUutIi3dv%2BvxWyHNRuHs%3D--izscY6LKMP398in0--vDzB3d9oLJ45qFeCJj3wQw%3D%3D</pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">DELETE /records/593</pre>
+          <pre class="request route highlight">GET /taggings?page=1</pre>
 
+            <h4>Query Parameters</h4>
+            <pre class="request query_parameters highlight">page: 1</pre>
 
 
 
             <h3>Response</h3>
               <h4>Headers</h4>
-              <pre class="response headers">Content-Type: application/json
-Set-Cookie: _morney_rails1_session=0dNpgBRhcaVrxaPHZPa8rHVaZpHJ0lKpKYDwy0HiAjrSnc%2FtQ0tpkFYNCjE8nt3G4LHyW%2F4GYoh%2Fp%2FPAg%2BJ%2FAENSxWjU7iDX7B9TBFOwxy7x%2B2Hi3Yfug3zlSm1WTBLE0gH8qA78e9MTt2OTuWyXsAxoXDnKmqiD7JLJnJVL1fBwrpj6h2W1jDp7E%2FbakfJmu8Mibqj8zbYB9T4AyU3LJha9wnuIoeC5ME4%3D--xkndzEP6dQB4CsQV--uvkMdAZVgO5V8faPdxkmog%3D%3D; path=/; HttpOnly</pre>
+              <pre class="response headers">Content-Type: application/json; charset=utf-8
+Set-Cookie: _morney_rails1_session=KnhUIshKoUNmuf%2BjqdvQwBBJsoDy7pUwEdJexxwNoW84EVgkHU1ShnWgdd6lu9diSytVlTBI%2Bdl65Vu9FGW7rbgDJkQfz0YqQLOPAmzSI7sEbqrz2GmWJ7QdjmkOH6MDi2zJbailTGtUx5JI3C5DabbMrVfv2fMKuEuPhVhKUV8XeVbhLHZ3mrJXWRTDS7wM%2FaYs%2BO0jHJFqMf92lXZTYBbhY3Nj2ZAlDwc%3D--N51aZ54x%2B7m%2BBHjf--bAG%2Ff8BmEnlTlb3gnbLYWg%3D%3D; path=/; HttpOnly</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
+              <h4>Body</h4>
+              <pre class="response body">[binary data]</pre>
       </div>
     </div>
   </body>
