@@ -2,12 +2,13 @@ require 'rails_helper'
 require 'rspec_api_documentation/dsl'
 
 resource "Records" do
-  let(:record){Record.create! amount: 10000, category: 'income'}
+  let(:user){User.create! email: 'aekjgsr@qq.com', password: '123456', password_confirmation: '123456'}
+  let(:record){Record.create! amount: 10000, category: 'income', user: user}
   let(:id){record.id}
   let(:amount){10000}
   let(:category){'outgoings'}
   let(:notes){'生活开支'}
-  let(:user){User.create! email: 'spec_test-helper@qq.com', password: '123456', password_confirmation: '123456'}
+
 
   post "/records" do
     parameter :amount, '金额', type: :integer, required: true
