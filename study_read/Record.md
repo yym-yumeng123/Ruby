@@ -129,3 +129,11 @@ gem 'kaminari'  # 分页插件
 ```
 
 知识点3: index 获取所有, show 展示一个
+
+
+---
+
+### 和 User 关联
+1. `bin/rails g migration addUserToRecords`  创建迁移文件
+2. 添加对应的 `db/migrate/add_user_to.rb`
+3. `bin/rails db:migrate`

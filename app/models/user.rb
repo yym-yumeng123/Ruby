@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   has_secure_password
 
+  has_many :records
+
   # 验证某些东西的存在
   validates_presence_of :email
   validates_uniqueness_of :email

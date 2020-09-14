@@ -7,14 +7,16 @@ resource "Records" do
   let(:amount){10000}
   let(:category){'outgoings'}
   let(:notes){'生活开支'}
+  let(:user){User.create! email: 'spec_test-helper@qq.com', password: '123456', password_confirmation: '123456'}
 
   post "/records" do
     parameter :amount, '金额', type: :integer, required: true
     parameter :category, '类型: outgoings: 1|income: 2', type: :integer, required: true
     parameter :notes, '备注', type: :string
-    example "创建记录" do
+    example "aaaa" do
       sign_in
       do_request
+      p response_body
       expect(status).to eq 200
     end
   end
@@ -29,11 +31,12 @@ resource "Records" do
 
   get "/records" do
     parameter :page, '页码', type: :integer
-    (1..11).to_a.map do
-      Record.create! amount: 10000, category: 'income'
-    end
+
     let(:page) {1}
     example '获取所有记录' do
+      (1..11).to_a.map do
+        Record.create! amount: 10000, category: 'income', user: user
+      end
       sign_in
       do_request
       expect(status).to eq 200
