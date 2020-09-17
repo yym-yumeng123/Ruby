@@ -70,6 +70,11 @@ GEM
       dotenv (= 2.7.6)
       railties (>= 3.2)
     erubi (1.9.0)
+    factory_bot (6.1.0)
+      activesupport (>= 5.0.0)
+    factory_bot_rails (6.1.0)
+      factory_bot (~> 6.1.0)
+      railties (>= 5.0.0)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     i18n (1.8.4)
@@ -191,6 +196,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.2)
   byebug
   dotenv-rails
+  factory_bot_rails
   kaminari
   pg (>= 0.18, < 2.0)
   puma (~> 3.11)
