@@ -2,27 +2,29 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   it '可以带密码创建' do
-    user = User.create email: '11@qq.com', password: '123456', password_confirmation: '123456'
+    user = create :user
     expect(user.password_digest).to_not eq '123456'
     expect(user.id).to be_a Numeric
   end
 
   it '可以删除 user' do
-    user = User.create email: '11@qq.com', password: '123456', password_confirmation: '123456'
+    user = create :user
     expect {
       User.destroy_by id: user.id
     }.to change { User.count }.by(-1)
   end
 
   it '创建的时候必须有 email' do
-    user = User.create password: '123456', password_confirmation: '123456'
+    user = build :user, email: ''
+    user.validate
     expect(user.errors.details[:email][0][:error]).to eq(:blank)
   end
 
   it '创建时email不能被占用' do
     # ! 如果不成功立刻报错
-    User.create! email: '11@qq.com', password: '123456', password_confirmation: '123456'
-    user = User.create email: '11@qq.com', password: '123456', password_confirmation: '123456'
+    create :user, email: '11@qq.com'
+    user = build :user, email: '11@qq.com'
+    user.validate
     expect(user.errors.details[:email][0][:error]).to eq(:taken)
   end
 
@@ -35,7 +37,8 @@ RSpec.describe User, type: :model do
   end
 
   it '邮箱为空字符串则只提示邮箱为空' do
-    user = User.create email: ''
+    user = build :user, email: ''
+    user.validate
     expect(user.errors.details[:email].length).to eq 1
     expect(user.errors.details[:email][0][:error]).to eq :blank
   end
